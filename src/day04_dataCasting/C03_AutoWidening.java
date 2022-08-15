@@ -1,0 +1,14 @@
+package day04_dataCasting;
+
+public class C03_AutoWidening {
+    public static void main(String[] args) {
+        byte sayi1=23;
+        short sayi2=55;
+
+        int sayi3=sayi1+sayi2;
+        double sayi4=sayi1*sayi2;
+       // sayi4=sayi2/sayi1;//Java once islemi yapacagi icin sonuc 2 alinir ancak sayi4double oldugu icin 2.0yazdirir
+        sayi4=(double) sayi2/sayi1;
+        System.out.println(sayi4);
+    }
+}
