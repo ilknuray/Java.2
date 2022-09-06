@@ -7,6 +7,8 @@ public class Fp04 {
         System.out.println(get7den100eToplam());
         System.out.println(get2den11eCarpim());
         System.out.println(faktoriyelHesapla(5));
+        System.out.println(verilenIkiSayiArasindakiCiftSayilarinToplami(2,5));
+        System.out.println(ikiSayiArasindakiTumSayilarinRakamlariToplami(23,32));
         //1) 7 den 100 kadar integer degerlerinin toplamini bulan bir method olusturun
     }
         public static int get7den100eToplam(){
@@ -27,7 +29,35 @@ public class Fp04 {
             return IntStream.rangeClosed(1, x).reduce(Math::multiplyExact).getAsInt();
         }
         System.out.println("0'dan buyuk bir deger giriniz");
+
         return  0;
     }
-    //4)
+    //4)verilen iki sayi arasindaki cift sayilarin toplamini bulan bir method olusturun
+
+    public static int verilenIkiSayiArasindakiCiftSayilarinToplami(int x,int y){
+        int z=0;
+
+        if(x>y){
+            z=x;
+            x=y;
+            y=z;
+
+        }
+
+        return IntStream.rangeClosed(x,y).filter(Utils::ciftAl).sum();
+    }
+    //5)verilen iki sayi arasindaki tum sayilarin rakamlarinin toplamini hesaplayan bir method olisturun
+
+    public static int ikiSayiArasindakiTumSayilarinRakamlariToplami(int x,int y){
+        int z=0;
+
+        if(x>y){
+            z=x;
+            x=y;
+            y=z;
+
+        }
+        return IntStream.rangeClosed(x,y).map(Utils::rakamlarToplaminiAl).sum();
+    }
+
 }
